@@ -42,6 +42,8 @@ with st.expander("Check the complete dataset:"):
 min_year = movies_df["release_year"].min()
 max_year = movies_df["release_year"].max()
 
+print(f"Min year: {min_year}, Max year: {max_year}")
+
 # TODO: Ex 2.3: How many director names are missing values (NaN)?
 num_missing_directors = movies_df["director"].isna().sum()
 # TODO: Ex 2.4: How many different countries are there in the data?
