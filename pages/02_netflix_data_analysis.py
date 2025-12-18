@@ -42,8 +42,6 @@ with st.expander("Check the complete dataset:"):
 min_year = movies_df["release_year"].min()
 max_year = movies_df["release_year"].max()
 
-print(f"Min year: {min_year}, Max year: {max_year}")
-
 # TODO: Ex 2.3: How many director names are missing values (NaN)?
 num_missing_directors = movies_df["director"].isna().sum()
 # TODO: Ex 2.4: How many different countries are there in the data?
@@ -64,7 +62,12 @@ print(f"There are {n_countries} different countries in the data")
 
 # TODO: Ex 2.5: How many characters long are on average the title names?
 avg_title_length = None
+title_lengths=[]
 
+for title in movies_df["title"]:
+    title_lengths.append(len(title))
+
+avg_title_length = sum(title_lengths) / len(title_lengths) 
 
 # ----- Displaying the extracted information metrics -----
 
