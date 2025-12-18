@@ -39,14 +39,22 @@ with st.expander("Check the complete dataset:"):
 # ----- Extracting some basic information from the dataset -----
 
 # TODO: Ex 2.2: What is the min and max release years?
-min_year = None
-max_year = None
+min_year = movies_df["release_year"].min()
+max_year = movies_df["release_year"].max()
 
 # TODO: Ex 2.3: How many director names are missing values (NaN)?
-num_missing_directors = None
-
+num_missing_directors = movies_df["director"].isna().sum()
 # TODO: Ex 2.4: How many different countries are there in the data?
-n_countries = None
+countries_series = movies_df["country"].fillna("Unknown")
+
+all_countries = []
+
+for value in countries_series:
+    countries_list = value.split(", ")
+    for country in countries_list:
+        all_countries.append(country)
+
+n_countries = len(set(all_countries))
 
 # TODO: Ex 2.5: How many characters long are on average the title names?
 avg_title_length = None
