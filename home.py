@@ -25,7 +25,7 @@ def home_page():
 
 
     # ----- Profile image file -----
-    profile_image_file_path = "koala.jpg"       # TODO: Upload your profile image to the same folder as this script and update this if it has a different name
+    profile_image_file_path = "Hyerim.jpeg"       # TODO: Upload your profile image to the same folder as this script and update this if it has a different name
 
     with open(profile_image_file_path, "rb") as img_file:
         img = "data:image/png;base64," + base64.b64encode(img_file.read()).decode()
@@ -40,7 +40,10 @@ def home_page():
 
 
     # ----- Personal title or short description -----
-    current_role = "Current Role and/or Studies or Description"   # TODO: Change this
+    current_role = "I am currently studying Big Data Analytics at EAE Business School." \
+    "I graduated in Hotel and Tourism Management from CETT–University of Barcelona." \
+    "I have professional experience working as a receptionist in hotels in both South Korea and Spain, where I developed strong customer service, communication, and operational skills." \
+    "My goal is to contribute to business decision-making by combining data analytics expertise with a solid background in tourism and hospitality management."   # TODO: Change this
 
     st.html(f"""<div style="text-align: center;"><h4><i>{current_role}</i></h4></div>""")
 
@@ -52,20 +55,25 @@ def home_page():
 
     # TODO: Modify and adapt the following lines to your info, you can add or remove some details if you want
     st.write("""
-    - 🧑‍💻 I am a <Current Role and/or Studies> 
+    - 🧑‍💻 I am a student in EAE Business School (Big Data Analystic) 
 
-    - 🛩️ prev: <Previous Experience, Background or Studies>
+    - 🛩️ prev: Bachelor’s degree in Hotel and Tourism Management from CETT-UB, with hands-on experience in Reception and VIP Services at five-star hotels in Seoul and Barcelona
+    
+    - ❤️ With my background, I am highly motivated to work in business data analysis to generate insights that support strategic decisions
 
-    - ❤️ <Your Passion and/or Interests>
+    - 🤖 Personal Projects :  http://172.166.156.98:8502
 
-    - 🤖 <Your Personal Projects>
+    - 🏂 My hobby is doing sports, reading books
 
-    - 🏂 <Your Hobbies>
-
-    - 📫 How to reach me: <Your Email>
+    - 📫 How to reach me: carol011017@gmail.com / +34 695 864 286
+             
+    - 🔗 Linkedin : www.linkedin.com/in/hyerim-hong-82765a2b4
 
     - 🏠 Barcelona
+             
+
     """)
+     
 
     # Feel free to add other points like your Linkedin, Github, Social Media, etc.
 
