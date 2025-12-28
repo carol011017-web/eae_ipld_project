@@ -61,7 +61,7 @@ def home_page():
     
     - ❤️ With my background, I am highly motivated to work in business data analysis to generate insights that support strategic decisions
 
-    - 🤖 Personal Projects :  http://172.166.156.98:8502
+    - 🤖 Personal Projects :  http://127.0.0.1:8502/
 
     - 🏂 My hobby is doing sports, reading books
 
