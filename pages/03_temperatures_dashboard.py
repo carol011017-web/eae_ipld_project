@@ -24,7 +24,8 @@ st.divider()
 def load_data():
     data_path = "data/cities_temperatures.csv"
 
-    temps_df = temps_df["Date"] = pd.to_datetime(temps_df["Date"]).dt.date  # TODO: Ex 3.1: Load the dataset using Pandas, use the data_path variable and set the index column to "show_id"
+    temps_df = pd.read_csv(data_path)
+    temps_df["Date"] = pd.to_datetime(temps_df["Date"]).dt.date  # TODO: Ex 3.1: Load the dataset using Pandas, use the data_path variable and set the index column to "show_id"
 
     if temps_df is not None:
         temps_df["Date"] = pd.to_datetime(temps_df["Date"]).dt.date
@@ -59,6 +60,9 @@ max_date = pd.to_datetime(temps_df["Date"]).max()
 # TODO:  Ex 3.5: What are the global minimum and maximum temperatures? Find the city and the date of each of them.
 min_temp = temps_df["AvgTemperatureCelsius"].min()
 max_temp = temps_df["AvgTemperatureCelsius"].max()
+
+min_temp_row = temps_df[temps_df["AvgTemperatureCelsius"] == min_temp].iloc[0]
+max_temp_row = temps_df[temps_df["AvgTemperatureCelsius"] == max_temp].iloc[0]
 
 min_temp_city = min_temp_row["City"]
 min_temp_date = min_temp_row["Date"]
@@ -126,13 +130,13 @@ if unique_countries_list is not None and len(selected_cities) > 0:
 
     fig = plt.figure(figsize=(10, 5))
 
-    # for city in selected_cities:
+for city in selected_cities:
     city_df = temps_df[temps_df["City"] == city]           # TODO
     city_df_period = city_df[
         (city_df["Date"] >= start_date) &
         (city_df["Date"] <= end_date)
     ]         # TODO
-   plt.plot(
+    plt.plot(
         city_df_period["Date"],
         city_df_period["AvgTemperatureCelsius"],
         label=city
@@ -152,21 +156,21 @@ if unique_countries_list is not None and len(selected_cities) > 0:
 
     fig = plt.figure(figsize=(10, 5))
 
-    # for city in selected_cities:
+for city in selected_cities:
     city_df = temps_df[temps_df["City"] == city]             
-# TODO
+    # TODO
     city_df_period = city_df[
         (city_df["Date"] >= start_date) &
         (city_df["Date"] <= end_date)
     ]         
-# TODO
+    # TODO
     plt.hist(
         city_df_period["AvgTemperatureCelsius"],
         bins=30,
         alpha=0.5,
         label=city
     )         
- # TODO
+    # TODO
     plt.title("Temperature Distribution (Selected Cities)")   # TODO
     plt.xlabel("Average Temperature (°C)")  # TODO
     plt.ylabel("Frequency")  # TODO
