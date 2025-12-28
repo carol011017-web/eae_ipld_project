@@ -141,13 +141,14 @@ for city in selected_cities:
         city_df_period["AvgTemperatureCelsius"],
         label=city
     )                     # TODO 
-    plt.title("Average Temperature Over Time (Selected Cities)")   # TODO
-    plt.xlabel("Date")  # TODO
-    plt.ylabel("Average Temperature (°C)")  # TODO
-
-    plt.legend()
     
-    c.pyplot(fig)
+plt.title("Average Temperature Over Time (Selected Cities)")   # TODO
+plt.xlabel("Date")  # TODO
+plt.ylabel("Average Temperature (°C)")  # TODO
+
+plt.legend()
+    
+c.pyplot(fig)
 
 
 
@@ -171,13 +172,13 @@ for city in selected_cities:
         label=city
     )         
     # TODO
-    plt.title("Temperature Distribution (Selected Cities)")   # TODO
-    plt.xlabel("Average Temperature (°C)")  # TODO
-    plt.ylabel("Frequency")  # TODO
+plt.title("Temperature Distribution (Selected Cities)")   # TODO
+plt.xlabel("Average Temperature (°C)")  # TODO
+plt.ylabel("Frequency")  # TODO
 
-    plt.legend()
+plt.legend()
 
-    c.pyplot(fig)
+c.pyplot(fig)
 
 
 
